@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "",
+"class": "Example",
+"language": "NativeScript",
+"path": "res://godot/libs/Example.gdns"
+} ]
+_global_script_class_icons={
+"Example": ""
+}
+
 [application]
 
 config/name="RustStarterKit"
+run/main_scene="res://godot/Main.tscn"
 config/icon="res://icon.png"
 
 [physics]

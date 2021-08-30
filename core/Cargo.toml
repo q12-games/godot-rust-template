@@ -10,5 +10,8 @@ gdnative = "0.9.3"
 euclid = "0.22.3"
 q12-godot-helpers = { path = "../../../projects/q12-godot-helpers" }
 
+[build-dependencies]
+gdnative-project-utils = "0.1.4"
+
 [lib]
 crate-type = ["cdylib"]
