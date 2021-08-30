@@ -1,0 +1,7 @@
+*.import
+.import/
+dist/
+logs/
+
+**/target/*
+!**/target/.gdignore

@@ -1,0 +1,14 @@
+[package]
+name = "game-core"
+version = "0.0.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+gdnative = "0.9.3"
+euclid = "0.22.3"
+q12-godot-helpers = { path = "../../../projects/q12-godot-helpers" }
+
+[lib]
+crate-type = ["cdylib"]
