@@ -134,8 +134,16 @@ version = "0.0.0"
 dependencies = [
  "euclid",
  "gdnative",
- "gdnative-project-utils",
  "q12-godot-helpers",
+]
+
+[[package]]
+name = "game-lib"
+version = "0.0.0"
+dependencies = [
+ "game-core",
+ "gdnative",
+ "gdnative-project-utils",
 ]
 
 [[package]]
@@ -143,9 +151,12 @@ name = "game-test"
 version = "0.0.0"
 dependencies = [
  "euclid",
+ "game-core",
  "gdnative",
  "godot-testicles",
  "q12-godot-helpers",
+ "regex",
+ "stdext",
 ]
 
 [[package]]

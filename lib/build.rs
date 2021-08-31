@@ -1,7 +1,7 @@
 use gdnative_project_utils::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-  let classes = scan_crate("src/scenes")?;
+  let classes = scan_crate("../core/src/scenes")?;
 
   Generator::new()
     .godot_resource_output_dir("../godot/libs")

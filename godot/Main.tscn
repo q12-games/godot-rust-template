@@ -4,3 +4,11 @@
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
+
+[node name="Text" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Count: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
