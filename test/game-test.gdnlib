@@ -1,24 +1,10 @@
 [entry]
-Android.armeabi-v7a="res://target/armv7-linux-androideabi/debug/libgame_test.so"
-Android.arm64-v8a="res://target/aarch64-linux-android/debug/libgame_test.so"
-Android.x86="res://target/i686-linux-android/debug/libgame_test.so"
-Android.x86_64="res://target/x86_64-linux-android/debug/libgame_test.so"
-X11.64="res://target/debug/libgame_test.so"
-Server.64="res://target/debug/libgame_test.so"
-OSX.64="res://target/debug/libgame_test.dylib"
-Windows.64="res://target/debug/game_test.dll"
-
-[dependencies]
-
-Android.armeabi-v7a=[  ]
-Android.arm64-v8a=[  ]
-Android.x86=[  ]
-Android.x86_64=[  ]
-X11.64=[  ]
-OSX.64=[  ]
+X11.64="res://target/x86_64-unknown-linux-gnu/debug/libgame_test.so"
+Server.64="res://target/x86_64-unknown-linux-gnu/debug/libgame_test.so"
+OSX.64="res://target/x86_64-unknown-linux-gnu/debug/libgame_test.dylib"
+Windows.64="res://target/x86_64-unknown-linux-gnu/debug/game_test.dll"
 
 [general]
-
 singleton=false
 load_once=true
 symbol_prefix="godot_"

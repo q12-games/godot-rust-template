@@ -5,11 +5,10 @@ in
   with nixpkgs;
   mkShell rec {
     buildInputs = [
-      rust_pkgs.cargo
-      rust_pkgs.rustc
-      rust_pkgs.rustfmt
-      rust_pkgs.clippy
+      rustup
       rust-analyzer
+      rust_pkgs.clippy
+      rust_pkgs.rustfmt
 
       godot-headless
       libclang
