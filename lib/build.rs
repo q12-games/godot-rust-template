@@ -5,13 +5,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
   let target = env::var("TARGET").unwrap();
   let classes = scan_crate("../core/src/scenes")?;
 
+  println!("cargo:rerun-if-env-changed=FORCE");
+
   // Remove all generated files
   fs::remove_dir_all("../godot/libs").expect("unable to delete libs directory");
   fs::create_dir("../godot/libs").expect("unable to create libs directory");
 
   // Target directory hack for linux and win
-  println!("cargo:warning=Building for {:?}", target);
-
   let target_dir = match &target[..] {
     "x86_64-unknown-linux-gnu" | "x86_64-pc-windows-gnu" => Some(Path::new("./target").join(target)),
     _ => None,

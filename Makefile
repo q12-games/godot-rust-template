@@ -13,11 +13,6 @@ _GODOT_windows = Windows
 
 _CARGO_TARGET_linux = x86_64-unknown-linux-gnu
 _CARGO_TARGET_windows = x86_64-pc-windows-gnu
-# _CARGO_TARGET_android = 
-#  x86_64-linux-android
-# aarch64-linux-android
-# i686-linux-android
-# x86_64-linux-android
 
 _SUFFIX_linux = ""
 _SUFFIX_windows = ".exe"
@@ -32,13 +27,11 @@ build: verify-params
 	$(CARGO) build --target $(CARGO_TARGET)
 	@touch ./target/.gdignore ./godot/libs/.empty
 
-check:
-	$(CARGO) clippy
+check: verify-params
+	$(CARGO) clippy --target $(CARGO_TARGET)
 
-run-test:
+test: build
 	sh ./test/run-tests.sh
-
-test: build run-test
 
 clean:
 	@rm -rf target
@@ -48,11 +41,14 @@ clean:
 	@rm -rf **/*.import
 	@echo "Done"
 
-export: build run-test
+export: build
 	@echo "Exporting $(TARGET) build"
 	@echo "$(GODOT_PLATFORM) $(CARGO_TARGET)"
-	mkdir -p ./target/godot-linux;
+	mkdir -p ./target/godot-$(TARGET);
 	$(GODOT_TEST_BIN) --export $(GODOT_PLATFORM) ./target/godot-$(TARGET)/game$(BIN_SUFFIX)
+
+nix-export:
+	nix-shell ./nix-envs/build-$(TARGET).nix --run 'make export TARGET=$(TARGET)'
 
 .PHONY: build
 
