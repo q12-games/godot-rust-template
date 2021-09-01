@@ -24,7 +24,7 @@ impl Example {
   }
 
   #[export]
-  fn _process(&mut self, _owner: &Owner, _del: f32) {
+  fn _process(&mut self, _owner: &Owner, _dt: f32) {
     let input = Input::godot_singleton();
 
     if input.is_action_just_pressed("ui_up") {

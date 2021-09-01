@@ -29,6 +29,7 @@ build: verify-params
 
 check: verify-params
 	$(CARGO) clippy --target $(CARGO_TARGET)
+	@touch ./target/.gdignore ./godot/libs/.empty
 
 test: build
 	sh ./test/run-tests.sh
@@ -37,7 +38,6 @@ clean:
 	@rm -rf target
 	@rm -rf ./godot/libs/*
 	@mkdir ./target
-	@touch ./target/.gdignore ./godot/libs/.empty
 	@rm -rf **/*.import
 	@echo "Done"
 

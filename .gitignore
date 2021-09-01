@@ -1,10 +1,8 @@
 *.import
 .import/
 dist/
+target/
 logs/
 
 godot/libs/*
 !godot/libs/.empty
-
-**/target/*
-!**/target/.gdignore
