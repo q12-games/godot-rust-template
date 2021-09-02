@@ -138,15 +138,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "game-lib"
-version = "0.0.0"
-dependencies = [
- "game-core",
- "gdnative",
- "gdnative-project-utils",
-]
-
-[[package]]
 name = "game-test"
 version = "0.0.0"
 dependencies = [
@@ -435,6 +426,15 @@ dependencies = [
  "itoa",
  "mini-internal",
  "ryu",
+]
+
+[[package]]
+name = "mygame"
+version = "0.0.0"
+dependencies = [
+ "game-core",
+ "gdnative",
+ "gdnative-project-utils",
 ]
 
 [[package]]

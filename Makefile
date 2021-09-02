@@ -1,4 +1,5 @@
 # Config
+GAME_NAME = my-game
 CARGO = cargo
 TARGET = linux
 GODOT_TEST_BIN = godot-headless
@@ -25,11 +26,12 @@ endif
 
 build: verify-params
 	$(CARGO) build --target $(CARGO_TARGET)
-	@touch ./target/.gdignore ./godot/libs/.empty
+	touch ./target/.gdignore ./godot/libs/.empty
 
 check: verify-params
 	$(CARGO) clippy --target $(CARGO_TARGET)
-	@touch ./target/.gdignore ./godot/libs/.empty
+	rustfmt --check ./{core,test,lib}/src/*.rs
+	touch ./target/.gdignore ./godot/libs/.empty
 
 test: build
 	sh ./test/run-tests.sh
@@ -45,7 +47,7 @@ export: build
 	@echo "Exporting $(TARGET) build"
 	@echo "$(GODOT_PLATFORM) $(CARGO_TARGET)"
 	mkdir -p ./target/godot-$(TARGET);
-	$(GODOT_TEST_BIN) --export $(GODOT_PLATFORM) ./target/godot-$(TARGET)/game$(BIN_SUFFIX)
+	$(GODOT_TEST_BIN) --export $(GODOT_PLATFORM) ./target/godot-$(TARGET)/$(GAME_NAME)$(BIN_SUFFIX)
 
 nix-export:
 	nix-shell ./nix-envs/build-$(TARGET).nix --run 'make export TARGET=$(TARGET)'
