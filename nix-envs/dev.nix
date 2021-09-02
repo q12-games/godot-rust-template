@@ -10,6 +10,7 @@ in
       rust-analyzer
       rust_pkgs.clippy
       rust_pkgs.rustfmt
+      cargo-watch
 
       godot-headless
       libclang
