@@ -48,7 +48,7 @@ test: build
 
 # Run tests and watch rust files for changes
 test-watch: build
-	cargo watch -s 'clear && make test TEST=$(TEST)' -i godot
+	npx nodemon --exec 'clear && make test TEST=$(TEST)' -e rs
 
 # Cleanup build artifacts
 clean:
