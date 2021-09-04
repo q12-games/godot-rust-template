@@ -49,9 +49,8 @@ test-watch: build
 
 # Cleanup build artifacts
 clean:
-	@rm -rf target
+	cargo clean
 	@rm -rf ./godot/libs/*
-	@mkdir ./target
 	@rm -rf **/*.import
 	@echo "Cleanup done"
 
