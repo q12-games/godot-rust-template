@@ -1,9 +1,12 @@
-# Config
-## Supported targets: linux, windows
+# CONFIG: Name of your game (will be used to create the exported binary)
 GAME_NAME = my-game
+# CONFIG: Cargo binary name
 CARGO = cargo
+# CONFIG: Default target (Supports: linux | windows)
 TARGET = linux
+# CONFIG: Godot binary used for exporting
 GODOT_TEST_BIN = godot-headless
+
 
 # Cases
 _GODOT_linux = Linux
