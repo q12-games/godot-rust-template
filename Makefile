@@ -34,6 +34,10 @@ build: verify-params
 	$(CARGO) build --target $(CARGO_TARGET)
 	touch ./target/.gdignore ./godot/libs/.empty
 
+# Build and watch for changes
+watch:
+	npx nodemon --exec 'clear && make build TARGET=$(TARGET)' -e rs
+
 # Run clippy and rustfmt
 check: verify-params
 	$(CARGO) clippy --target $(CARGO_TARGET)
@@ -47,7 +51,7 @@ test: build
 	sh ./test/run-tests.sh $(TEST)
 
 # Run tests and watch rust files for changes
-test-watch: build
+test-watch:
 	npx nodemon --exec 'clear && make test TEST=$(TEST)' -e rs
 
 # Cleanup build artifacts
